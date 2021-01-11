@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Lazy load future state</title>
+    <script src="//unpkg.com/angular/angular.js"></script>
+    <script src="//unpkg.com/oclazyload"></script>
+    <script src="//unpkg.com/angular-ui-router@1.0.0-rc.1/release/angular-ui-router.js"></script>
+    <!-- <script src="build/app.js"></script>
+    <script src="build/billing.js"></script>
+    <script src="build/documents.js"></script>
+    <script src="build/home.js"></script>
+    <script src="build/labs.js"></script> -->
+</head>
+
+<body>
+    <a ui-sref="welcome" ui-sref-active="active">Welcome</a>
+    <a ui-sref="patients" ui-sref-active="active">Patient Information</a>
+    <a ui-sref="locations" ui-sref-active="active">Location Information</a>
+    <br>
+    <ui-view>view not loaded</ui-view>
+</body>
+
+</html>
