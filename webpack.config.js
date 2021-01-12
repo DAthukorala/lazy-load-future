@@ -13,12 +13,7 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, '/dist')
-    },
-    optimization: {
-        splitChunks: {
-            chunks: 'all',
-          }
+        path: path.join(__dirname, '/dist')
     },
     module: {
         rules: [{
@@ -40,11 +35,12 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         historyApiFallback: true,
-        contentBase: path.resolve(__dirname, './dist'),
+        contentBase: path.join(__dirname, '/dist'),
         open: true,
         compress: true,
         hot: true,
         port: 8080,
+        writeToDisk: true
     },
     plugins: [
         new CleanWebpackPlugin(),

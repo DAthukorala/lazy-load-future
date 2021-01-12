@@ -1,5 +1,5 @@
 export default function routes($stateProvider) {
-    $stateProvider.state('home', {
+    $stateProvider.state('labs', {
         url: '/labs',
         component: 'labsDemo'
     })

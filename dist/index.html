@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Lazy load future state</title>
+</head>
+
+<body>
+    <a ui-sref="home" ui-sref-active="active">Welcome</a>
+    <a ui-sref="billing" ui-sref-active="active">Billing</a>
+    <a ui-sref="documents" ui-sref-active="active">Documents</a>
+    <a ui-sref="labs" ui-sref-active="active">Labs</a>
+    <br>
+    <ui-view>view not loaded</ui-view>
+<script src="app.js"></script><script src="billing.js"></script><script src="documents.js"></script><script src="home.js"></script><script src="labs.js"></script></body>
+
+</html>
