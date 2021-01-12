@@ -15,6 +15,11 @@ module.exports = {
         filename: '[name].js',
         path: path.resolve(__dirname, '/dist')
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+          }
+    },
     module: {
         rules: [{
                 test: /\.js$/,
@@ -40,8 +45,8 @@ module.exports = {
         compress: true,
         hot: true,
         port: 8080,
-      },
-      plugins: [
+    },
+    plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Lazy load future state',

@@ -1,7 +1,6 @@
-angular.module('billing')
-    .config($stateProvider => {
-        $stateProvider.state('billing', {
-            url: '/billing',
-            component: 'billingDemo'
-        })
-    });
+export default function routes($stateProvider) {
+    $stateProvider.state('billing', {
+        url: '/billing',
+        component: 'billingDemo'
+    })
+}

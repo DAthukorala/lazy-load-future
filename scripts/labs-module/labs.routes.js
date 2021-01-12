@@ -1,7 +1,6 @@
-angular.module('labs')
-    .config($stateProvider => {
-        $stateProvider.state('labs', {
-            url: '/labs',
-            component: 'labsDemo'
-        })
-    });
+export default function routes($stateProvider) {
+    $stateProvider.state('home', {
+        url: '/labs',
+        component: 'labsDemo'
+    })
+}
