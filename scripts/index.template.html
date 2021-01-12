@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title><%= htmlWebpackPlugin.options.title %></title>   
+</head>
+
+<body>
+    <a ui-sref="home" ui-sref-active="active">Welcome</a>
+    <a ui-sref="billing" ui-sref-active="active">Billing</a>
+    <a ui-sref="documents" ui-sref-active="active">Documents</a>
+    <a ui-sref="labs" ui-sref-active="active">Labs</a>
+    <br>
+    <ui-view>view not loaded</ui-view>
+</body>
+
+</html>

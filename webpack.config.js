@@ -1,39 +1,53 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
-const webpack = require('webpack'); //to access built-in plugins
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack')
 
 module.exports = {
     entry: {
-        app: './scripts/app.js',
-        billing: './scripts/billing-module/billing.module.js',
-        documents: './scripts/documents-module/documents.module.js',
-        home: './scripts/home-module/home.module.js',
-        labs: './scripts/labs-module/labs.module.js',
+        app: path.resolve(__dirname, './scripts/app.js'),
+        billing: path.resolve(__dirname, './scripts/billing-module/billing.module.js'),
+        documents: path.resolve(__dirname, './scripts/documents-module/documents.module.js'),
+        home: path.resolve(__dirname, './scripts/home-module/home.module.js'),
+        labs: path.resolve(__dirname, './scripts/labs-module/labs.module.js'),
     },
     output: {
         filename: '[name].js',
-        path: __dirname + '/build'
+        path: path.resolve(__dirname, '/dist')
     },
-    mode: 'development',
     module: {
         rules: [{
-                test: /\.html$/,
-                use: 'html-loader'
+                test: /\.js$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
             },
             {
-                test: /\.js$/,
+                test: /\.ts?$/,
+                use: 'ts-loader',
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-            }
-        ]
+            },
+        ],
     },
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.ts', '.js'],
     },
-    plugins: [
+    mode: 'development',
+    devtool: 'inline-source-map',
+    devServer: {
+        historyApiFallback: true,
+        contentBase: path.resolve(__dirname, './dist'),
+        open: true,
+        compress: true,
+        hot: true,
+        port: 8080,
+      },
+      plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: './scripts/index.html'
-        })
-    ],
-    devtool: "inline-source-map"
+            title: 'Lazy load future state',
+            template: path.resolve(__dirname, './scripts/index.template.html'),
+            filename: 'index.html', // output file
+        }),
+        new webpack.HotModuleReplacementPlugin()
+    ]
 };
