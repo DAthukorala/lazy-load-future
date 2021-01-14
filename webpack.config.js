@@ -5,7 +5,7 @@ const webpack = require('webpack')
 
 module.exports = {
     entry: {
-        app: path.resolve(__dirname, './scripts/app.js'),
+        main: path.resolve(__dirname, './scripts/app.js'),
         billing: path.resolve(__dirname, './scripts/billing-module/billing.module.js'),
         documents: path.resolve(__dirname, './scripts/documents-module/documents.module.js'),
         home: path.resolve(__dirname, './scripts/home-module/home.module.js'),
@@ -47,6 +47,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Lazy load future state',
             template: path.resolve(__dirname, './scripts/index.template.html'),
+            chunks: ['main'],
             filename: 'index.html', // output file
         }),
         new webpack.HotModuleReplacementPlugin()
