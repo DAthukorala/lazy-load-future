@@ -1,7 +1,6 @@
 export default function documentsDemo() {
     return {
-        // templateUrl: 'scripts/documents-module/components/documents-demo/documents-demo.component.html',
-        template:'<h2>This is the documents demo component</h2>',
+        template: require("./documents-demo.component.html"),
         controller: ('documentsDemoController', documentsDemoController),
         controllerAs: 'ctrl'
     };

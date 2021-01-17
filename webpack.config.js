@@ -16,17 +16,11 @@ module.exports = {
         path: path.join(__dirname, '/dist')
     },
     module: {
-        rules: [{
-                test: /\.js$/,
-                use: 'ts-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.ts?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-        ],
+        rules: [
+            { test: /\.js$/, use: 'ts-loader', exclude: /node_modules/ },
+            { test: /\.ts?$/, use: 'ts-loader', exclude: /node_modules/ },
+            { test: /\.html$/i, use: 'html-loader' }
+        ]
     },
     resolve: {
         extensions: ['.ts', '.js'],

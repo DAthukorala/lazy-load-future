@@ -1,7 +1,6 @@
 export default function billingDemo() {
     return {
-        // templateUrl: 'scripts/billing-module/components/billing-demo/billing-demo.component.html',
-        template:'<h2>This is the billing demo component</h2>',
+        template: require("./billing-demo.component.html"),
         controller: ('billingDemoController', billingDemoController),
         controllerAs: 'ctrl'
     };
