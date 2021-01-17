@@ -10,6 +10,7 @@ module.exports = {
         documents: path.resolve(__dirname, './scripts/documents-module/documents.module.js'),
         home: path.resolve(__dirname, './scripts/home-module/home.module.js'),
         labs: path.resolve(__dirname, './scripts/labs-module/labs.module.js'),
+        locations: path.resolve(__dirname, './scripts/locations-module/locations.module.ts'),
     },
     output: {
         filename: '[name].js',

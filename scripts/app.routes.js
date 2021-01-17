@@ -28,4 +28,11 @@ export default function routes($stateProvider, $urlRouterProvider) {
         lazyLoad: (transition) =>
             transition.injector().get('$ocLazyLoad').load('labs.js')
     });
+
+    $stateProvider.state({
+        name: 'locations.**',
+        url: '/locations',
+        lazyLoad: (transition) =>
+            transition.injector().get('$ocLazyLoad').load('locations.js')
+    });
 }

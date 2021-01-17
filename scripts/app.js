@@ -1,4 +1,4 @@
-import 'angular';
+import * as angular from 'angular';
 import '@uirouter/angularjs';
 import 'oclazyload';
 import routes from './app.routes';
