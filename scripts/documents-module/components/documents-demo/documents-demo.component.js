@@ -1,6 +1,8 @@
+import * as template from "./documents-demo.component.html";
+
 export default function documentsDemo() {
     return {
-        template: require("./documents-demo.component.html"),
+        template: template,
         controller: ('documentsDemoController', documentsDemoController),
         controllerAs: 'ctrl'
     };

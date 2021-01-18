@@ -1,6 +1,8 @@
+import * as template from "./labs-demo.component.html";
+
 export default function labsDemo() {
     return {
-        template: require("./labs-demo.component.html"),
+        template: template,
         controller: ('labsDemoController', labsDemoController),
         controllerAs: 'ctrl'
     };

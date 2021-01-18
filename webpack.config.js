@@ -37,6 +37,18 @@ module.exports = {
         port: 8080,
         writeToDisk: true
     },
+    optimization: {
+        moduleIds: 'deterministic',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all',
+                },
+            },
+        }
+    },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({

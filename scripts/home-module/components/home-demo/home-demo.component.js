@@ -1,6 +1,8 @@
+import * as template from "./home-demo.component.html";
+
 export default function homeDemo() {
     return {
-        template: require("./home-demo.component.html"),
+        template: template,
         controller: ('homeDemoController', homeDemoController),
         controllerAs: 'ctrl'
     };
