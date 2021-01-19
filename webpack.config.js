@@ -52,7 +52,6 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Lazy load future state',
             template: path.resolve(__dirname, './scripts/index.template.html'),
             chunks: ['main'],
             filename: 'index.html', // output file
