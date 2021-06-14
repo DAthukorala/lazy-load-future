@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack')
+const webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -10,7 +10,7 @@ module.exports = {
         documents: path.resolve(__dirname, './scripts/documents-module/documents.module.js'),
         home: path.resolve(__dirname, './scripts/home-module/home.module.js'),
         labs: path.resolve(__dirname, './scripts/labs-module/labs.module.js'),
-        locations: path.resolve(__dirname, './scripts/locations-module/locations.module.ts'),
+        locations: path.resolve(__dirname, './scripts/locations-module/locations.module.ts')
     },
     output: {
         filename: '[name].js',
@@ -24,7 +24,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.ts', '.js'],
+        extensions: ['.ts', '.js']
     },
     mode: 'development',
     devtool: 'inline-source-map',
@@ -44,9 +44,9 @@ module.exports = {
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,
                     name: 'vendors',
-                    chunks: 'all',
-                },
-            },
+                    chunks: 'all'
+                }
+            }
         }
     },
     plugins: [
@@ -54,7 +54,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './scripts/index.template.html'),
             chunks: ['main'],
-            filename: 'index.html', // output file
+            filename: 'index.html' // output file
         }),
         new webpack.HotModuleReplacementPlugin()
     ]
